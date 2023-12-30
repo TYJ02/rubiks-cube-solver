@@ -265,7 +265,7 @@ def arduino_com(solutions, arduino):
             #print(data[-3])
             if data_list == expected_return:
                 print(data)
-                print('dumbass')
+                print('done')
                 break
             else: 
                 print('not correct')
