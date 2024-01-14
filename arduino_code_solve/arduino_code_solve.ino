@@ -202,6 +202,12 @@ void AD2()
     }
 
 
+void test()
+{
+    F();
+    }
+
+
 void setup() {
 
   // put your setup code here, to run once:
@@ -239,7 +245,7 @@ void loop() {
     }
     else
     {
-        F();
+        test();
     }
     
     if (j == 1){
