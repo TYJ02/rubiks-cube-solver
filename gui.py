@@ -1,12 +1,15 @@
 import kociemba
 import tkinter as tk
 import numpy as np
-#from kociemba_solver import cvt2kociemba, steps_converter
-#from Arduino_communication import arduino_com
-#from vision import capture_cube
+from kociemba_solver import steps_converter
+# from Arduino_communication import arduino_com
+from vision import capture_cube
 from PIL import Image, ImageTk
-import serial
-import os
+# import serial
+# import os
+
+# TODO work on myself
+
 
 class App:
     def __init__(self, master):
@@ -75,17 +78,17 @@ class App:
         self.text.delete(1.0, "end")
         self.text.insert(1.0, "taking screenshot of the cube ...")
         #TODO import data from kociemba_solver.py (kociemba notation)
-        cube_state = capture_cube()
-        self.cubestring = cvt2kociemba(cube_state)
+        #cube_state = capture_cube()
+        #self.cubestring = cvt2kociemba(cube_state)
         self.text.delete(1.0, "end")
         self.text.insert(1.0, f"cubestring is {self.cubestring}")
-        #self.cubestring = cvt2kociemba([
-        #    [['Y', 'W', 'G'], ['R', 'B', 'G'], ['R', 'W', 'R']], 
-        #    [['W', 'O', 'G'], ['B', 'W', 'B'], ['W', 'Y', 'R']],
-        #    [['Y', 'W', 'O'], ['Y', 'R', 'O'], ['G', 'W', 'G']],
-        #    [['Y', 'R', 'B'], ['B', 'Y', 'Y'], ['O', 'Y', 'Y']],
-        #    [['R', 'G', 'B'], ['G', 'O', 'R'], ['B', 'O', 'B']],
-        #    [['O', 'O', 'W'], ['G', 'G', 'B'], ['O', 'R', 'W']]])
+        self.cubestring = cvt2kociemba([
+           [['Y', 'W', 'G'], ['R', 'B', 'G'], ['R', 'W', 'R']], 
+            [['W', 'O', 'G'], ['B', 'W', 'B'], ['W', 'Y', 'R']],
+            [['Y', 'W', 'O'], ['Y', 'R', 'O'], ['G', 'W', 'G']],
+            [['Y', 'R', 'B'], ['B', 'Y', 'Y'], ['O', 'Y', 'Y']],
+            [['R', 'G', 'B'], ['G', 'O', 'R'], ['B', 'O', 'B']],
+            [['O', 'O', 'W'], ['G', 'G', 'B'], ['O', 'R', 'W']]])
         print(self.cubestring)
         #TODO update the colors to the app
         n = 0
@@ -141,7 +144,7 @@ class App:
 
     def cube_image(self):
         for i in range(6):
-            directory_path =f"./picture/cubeface{i}.jpg"
+            directory_path =f"../picture/cubeface{i}.jpg"
             raw_string = repr(directory_path)[1:-1]
             print(raw_string)
             image = Image.open(raw_string)
