@@ -1,9 +1,9 @@
 import kociemba
 import tkinter as tk
 import numpy as np
-#from kociemba_solver import cvt2kociemba, steps_converter
-#from Arduino_communication import arduino_com
-#from vision import capture_cube
+# from kociemba_solver import cvt2kociemba, steps_converter
+# from Arduino_communication import arduino_com
+# from vision import capture_cube
 from PIL import Image, ImageTk
 import serial
 import os
@@ -187,5 +187,3 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = App(root)
     root.mainloop()
-
-
