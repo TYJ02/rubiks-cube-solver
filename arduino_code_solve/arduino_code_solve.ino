@@ -24,7 +24,7 @@ void F()
 
 void F2()
 {
-    serial_front.write(135);
+    servo_front.write(135);
     delay(300);
     servo_front.write(90);
     delay(1000);
@@ -43,7 +43,7 @@ void AF()
 
 void AF2()
 {
-    serial_front.write(45);
+    servo_front.write(45);
     delay(300);
     servo_front.write(90);
     delay(1000);
